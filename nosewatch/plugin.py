@@ -19,7 +19,7 @@ class WatchPlugin(Plugin):
         argv.remove('--with-watch')
         watchcmd = 'clear && ' + ' '.join(argv)
         call_args = ['watchmedo', 'shell-command', '-c',
-            watchcmd, '-R', '--debug-force-polling', '-p', '*.py', '.']
+            watchcmd, '-R', '--interval', '10', '-p', '*.py', '.']
         try:
             self.call(call_args)
         except KeyboardInterrupt:
